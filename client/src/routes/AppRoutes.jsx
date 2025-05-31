@@ -3,6 +3,7 @@ import Contact from '../pages/Contact'
 import Login from '../pages/Login'
 import Menu from '../pages/Menu'
 import {Routes,Route} from "react-router-dom"
+import Signup from '../pages/Signup'
 
 function AppRoutes() {
   return (
@@ -11,6 +12,7 @@ function AppRoutes() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/menu" element={<Menu/>} />
+        <Route path="/signup" element={<Signup/>} />
       </Routes>
   )
 }
