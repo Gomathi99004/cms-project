@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 
-function Login() {
+function Signup() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add authentication logic here
+        if (password !== confirmPassword) {
+            alert("Passwords do not match!");
+            return;
+        }
+        // Add signup logic here
         alert(`Username: ${username}\nPassword: ${password}`);
     };
 
@@ -20,15 +25,15 @@ function Login() {
                         alt="Restaurant"
                         className="rounded-xl shadow-lg mb-6 w-64 h-48 object-cover"
                     />
-                    <h2 className="text-2xl font-bold text-white mb-2">Welcome Back!</h2>
+                    <h2 className="text-2xl font-bold text-white mb-2">Join Us!</h2>
                     <p className="text-orange-100 text-center">
-                        Sign in to manage your restaurant with ease.
+                        Create your account to manage your restaurant.
                     </p>
                 </div>
-                {/* Right Side - Login Form */}
+                {/* Right Side - Signup Form */}
                 <div className="md:w-1/2 p-8 flex flex-col justify-center">
                     <h1 className="text-3xl font-bold text-orange-600 mb-6 text-center drop-shadow">
-                        Restaurant CMS Login
+                        Restaurant CMS Signup
                     </h1>
                     <form onSubmit={handleSubmit}>
                         <div className="mb-4">
@@ -59,32 +64,31 @@ function Login() {
                                 required
                             />
                         </div>
-                        <div className="flex items-center justify-between mb-6">
-                            <div className="flex items-center">
-                                <input
-                                    id="remember"
-                                    type="checkbox"
-                                    className="h-4 w-4 text-orange-600 focus:ring-orange-500 border-gray-300 rounded"
-                                />
-                                <label htmlFor="remember" className="ml-2 block text-sm text-gray-600">
-                                    Remember me
-                                </label>
-                            </div>
-                            <a href="#" className="text-sm text-orange-500 hover:underline">
-                                Forgot password?
-                            </a>
+                        <div className="mb-6">
+                            <label className="block text-gray-700 mb-2" htmlFor="confirmPassword">
+                                Confirm Password
+                            </label>
+                            <input
+                                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 transition"
+                                type="password"
+                                id="confirmPassword"
+                                value={confirmPassword}
+                                onChange={(e) => setConfirmPassword(e.target.value)}
+                                placeholder="Confirm your password"
+                                required
+                            />
                         </div>
                         <button
                             type="submit"
                             className="w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition shadow"
                         >
-                            Login
+                            Sign Up
                         </button>
                     </form>
                     <p className="mt-6 text-center text-gray-500">
-                        Don&apos;t have an account?{' '}
-                        <a href="#" className="text-orange-500 font-semibold hover:underline">
-                            Sign up
+                        Already have an account?{' '}
+                        <a href="/login" className="text-orange-500 font-semibold hover:underline">
+                            Login
                         </a>
                     </p>
                 </div>
@@ -93,4 +97,4 @@ function Login() {
     );
 }
 
-export default Login;
+export default Signup;
