@@ -8,10 +8,10 @@ export default function Home() {
             <nav className="w-full flex justify-end items-center p-6">
                 <div className="space-x-4">
                     <Link
-                        to="/signin"
+                        to="/login"
                         className="px-5 py-2 rounded-md bg-blue-600 text-white font-semibold hover:bg-blue-700 transition"
                     >
-                        Sign In
+                        Login
                     </Link>
                     <Link
                         to="/signup"
@@ -35,10 +35,10 @@ export default function Home() {
                         Get Started
                     </Link>
                     <Link
-                        to="/signin"
+                        to="/login"
                         className="px-8 py-3 rounded-md border border-blue-600 text-blue-600 font-semibold hover:bg-blue-50 transition"
                     >
-                        Sign In
+                        Login
                     </Link>
                 </div>
             </main>

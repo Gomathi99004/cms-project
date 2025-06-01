@@ -1,18 +1,19 @@
-import Home from '../pages/home'
-import Contact from '../pages/Contact'
-import Login from '../pages/Login'
-import Menu from '../pages/Menu'
-import {Routes,Route} from "react-router-dom"
+import Home from '../pages/Home';        
+import Login from '../pages/Login';      
+import Contact from '../pages/Dashboard/Contact';  
+import Menu from '../pages/Dashboard/Menu';        
+
+import { Routes, Route } from 'react-router-dom';
 
 function AppRoutes() {
   return (
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/contact" element={<Contact/>} />
-        <Route path="/signin" element={<Login/>} />
-        <Route path="/menu" element={<Menu/>} />
-      </Routes>
-  )
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/menu" element={<Menu />} />
+    </Routes>
+  );
 }
 
 export default AppRoutes;
